@@ -1,6 +1,72 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <p>test</p>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Request</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffe6f0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff3366;
+        }
+        .message {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .options {
+            margin: 20px 0;
+        }
+        .options label {
+            margin: 0 15px;
+            font-size: 1.5em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            background-color: #ff3366;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #cc0052;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Hi Safa, will you be my Valentine?</div>
+    <div class="options">
+        <label><input type="radio" name="valentine" value="yes"> Yes</label>
+        <label><input type="radio" name="valentine" value="no"> No</label>
+    </div>
+    <button onclick="checkAnswer()">Submit</button>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('valentine');
+            let selected = '';
+            for (let option of options) {
+                if (option.checked) {
+                    selected = option.value;
+                    break;
+                }
+            }
+            if (selected === 'yes') {
+                alert('Thank you, Safa! ❤️');
+            } else if (selected === 'no') {
+                alert('Oh no! Maybe next year? 😢');
+            } else {
+                alert('Please choose an option!');
+            }
+        }
+    </script>
+</body>
 </html>
